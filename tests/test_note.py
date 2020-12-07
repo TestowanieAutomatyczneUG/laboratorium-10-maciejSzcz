@@ -11,7 +11,7 @@ from src.note.note import Note
 
 class TestNote(TestCase):
     def setUp(self):
-        self.temp = Note()
+        self.temp = Note("Andrzej")
 
     def test_note_init__creates_name(self):
         assert_that(self.temp).has_name("Andrzej")
