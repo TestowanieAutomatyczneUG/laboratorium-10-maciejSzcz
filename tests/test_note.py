@@ -34,6 +34,9 @@ class TestNote(TestCase):
     def test_note_init_note_throws_Exception_with_value_greater_than_6(self):
         assert_that(Note).raises(Exception).when_called_with("Andrzej", 6.1)
 
+    def test_note_init_note_throws_Exception_with_value_smaller_than_2(self):
+        assert_that(Note).raises(Exception).when_called_with("Andrzej", 1.999999999)
+
     def tearDown(self):
         self.temp = None
 
