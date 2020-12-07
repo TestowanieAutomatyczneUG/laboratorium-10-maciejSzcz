@@ -11,10 +11,16 @@ from src.note.note import Note
 
 class TestNote(TestCase):
     def setUp(self):
-        self.temp = Note("Andrzej")
+        self.temp = Note("Andrzej", 4.0)
 
     def test_note_init__creates_name(self):
         assert_that(self.temp).has_name("Andrzej")
+
+    def test_note_init_creates_note(self):
+        assert_that(self.temp).has_note(4.0)
+
+    def tearDown(self):
+        self.temp = None
 
 
 if __name__ == '__main__':
