@@ -27,4 +27,6 @@ class Note(object):
             raise TypeError("note must be of float type")
         elif value > 6.0:
             raise Exception("note can't be bigger than 6.0")
+        elif value < 2.0:
+            raise Exception("note can't be smaller than 2.0")
         self._note = value
