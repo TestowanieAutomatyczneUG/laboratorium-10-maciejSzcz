@@ -16,3 +16,13 @@ class Note(object):
         elif value == "":
             raise Exception("name can't be empty")
         self._name = value
+
+    @property
+    def note(self):
+        return self._note
+
+    @note.setter
+    def note(self, value):
+        if type(value) != float:
+            raise TypeError("note must be of float type")
+        self._note = value
