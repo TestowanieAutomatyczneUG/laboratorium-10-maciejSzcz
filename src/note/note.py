@@ -11,4 +11,6 @@ class Note(object):
     def name(self, value):
         if value == None:
             raise Exception("name can't be null")
+        elif type(value) != str:
+            raise TypeError("name must be of string type")
         self._name = value
