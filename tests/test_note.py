@@ -19,6 +19,9 @@ class TestNote(TestCase):
     def test_note_init_creates_note(self):
         assert_that(self.temp).has_note(4.0)
 
+    def test_note_init_null_name_throws_exception(self):
+        assert_that(Note).raises(Exception).when_called_with(None, 4.0)
+
     def tearDown(self):
         self.temp = None
 
