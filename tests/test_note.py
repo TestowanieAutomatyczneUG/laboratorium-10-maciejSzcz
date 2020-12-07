@@ -31,6 +31,9 @@ class TestNote(TestCase):
     def test_note_init_note_throws_typeError_with_not_float(self):
         assert_that(Note).raises(TypeError).when_called_with("Andrzej", 2+1j)
 
+    def test_note_init_note_throws_Exception_with_value_greater_than_6(self):
+        assert_that(Note).raises(Exception).when_called_with("Andrzej", 6.1)
+
     def tearDown(self):
         self.temp = None
 
