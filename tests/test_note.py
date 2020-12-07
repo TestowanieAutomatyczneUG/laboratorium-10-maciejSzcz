@@ -28,6 +28,9 @@ class TestNote(TestCase):
     def test_note_init_name_throws_exception_with_empty_string(self):
         assert_that(Note).raises(Exception).when_called_with("", 2.0)
 
+    def test_note_init_note_throws_typeError_with_not_float(self):
+        assert_that(Note).raises(TypeError).when_called_with("Andrzej", 2+1j)
+
     def tearDown(self):
         self.temp = None
 
