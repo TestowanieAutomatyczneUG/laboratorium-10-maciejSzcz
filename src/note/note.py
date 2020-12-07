@@ -3,7 +3,7 @@ class Note(object):
         self.name = name
         self.note = note
 
-    @property
+    @property #getter
     def name(self):
         return self._name
 
@@ -17,7 +17,7 @@ class Note(object):
             raise Exception("name can't be empty")
         self._name = value
 
-    @property
+    @property #getter
     def note(self):
         return self._note
 
@@ -25,4 +25,6 @@ class Note(object):
     def note(self, value):
         if type(value) != float:
             raise TypeError("note must be of float type")
+        elif value > 6.0:
+            raise Exception("note can't be bigger than 6.0")
         self._note = value
