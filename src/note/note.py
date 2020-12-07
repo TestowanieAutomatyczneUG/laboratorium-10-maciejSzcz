@@ -13,4 +13,6 @@ class Note(object):
             raise Exception("name can't be null")
         elif type(value) != str:
             raise TypeError("name must be of string type")
+        elif value == "":
+            raise Exception("name can't be empty")
         self._name = value
